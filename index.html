@@ -2,27 +2,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
-    <script>
-      var imie = prompt("Jak masz na imie");
-      var c = new Worker("worker.js");
-      c.postMessage(imie);
-      c.onmessage = function(event){
-        if(event.data == "START"){
-          document.getElementById("data").innerHTML += "== START ==" + "<br />";
-          return;
-        }
-        if(event.data == "KONIEC"){
-            document.getElementById("data").innerHTML += "== KONIEC ==" + "<br />"; 
-            c.terminate();
-            c = undefined;
-            return;
-        }        
-        document.getElementById("data").innerHTML += event.data + "<br />";
-      }
-
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aes-js/3.1.2/index.min.js"></script>
   </head>
   <body>
-    <div id="data"></div>
+    
   </body>
 </html>
