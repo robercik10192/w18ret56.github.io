@@ -2,8 +2,14 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
+    <script>
+      var c = new Worker("worker.js");
+      c.onmessage = function(x){
+        document.getElementById("data").innerHTML += x.data + "<br />"; 
+      }
+    </script>
   </head>
   <body>
-    <center><h1>Hello World!</h1></center>
+    <div id="data"></div>
   </body>
 </html>
