@@ -4,9 +4,11 @@
     <title>Hello World</title>
     <script>
       var c = new Worker("worker.js");
-      c.onmessage = function(x){
-        document.getElementById("data").innerHTML += x.data + "<br />"; 
+      c.onmessage = function(event){
+        document.getElementById("data").innerHTML += event.data + "<br />"; 
       }
+      c.terminate();
+      c = undefined;
     </script>
   </head>
   <body>
