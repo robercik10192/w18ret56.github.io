@@ -3,7 +3,9 @@
     <meta charset="UTF-8">
     <title>Hello World</title>
     <script>
+      var imie = prompt("Jak masz na imie");
       var c = new Worker("worker.js");
+      c.postMessage(imie);
       c.onmessage = function(event){
         if(event.data == "START"){
           document.getElementById("data").innerHTML += "== START ==" + "<br />";
