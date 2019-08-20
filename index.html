@@ -9,13 +9,13 @@
           document.getElementById("data").innerHTML += "== START ==" + "<br />";
           return;
         }
-        document.getElementById("data").innerHTML += event.data + "<br />";
         if(event.data == "KONIEC"){
             document.getElementById("data").innerHTML += "== KONIEC ==" + "<br />"; 
             c.terminate();
             c = undefined;
             return;
-        }
+        }        
+        document.getElementById("data").innerHTML += event.data + "<br />";
       }
 
     </script>
