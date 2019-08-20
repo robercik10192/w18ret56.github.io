@@ -7,14 +7,14 @@
       c.onmessage = function(event){
         if(event.data == "START"){
           document.getElementById("data").innerHTML += "== START ==" + "<br />";
-          continue;
+          return;
         }
         document.getElementById("data").innerHTML += event.data + "<br />";
         if(event.data == "KONIEC"){
             document.getElementById("data").innerHTML += "== KONIEC ==" + "<br />"; 
             c.terminate();
             c = undefined;
-            continue;
+            return;
         }
       }
 
