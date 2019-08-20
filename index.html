@@ -5,10 +5,17 @@
     <script>
       var c = new Worker("worker.js");
       c.onmessage = function(event){
-        document.getElementById("data").innerHTML += event.data + "<br />"; 
+        if(event.data == "START"){
+          document.getElementById("data").innerHTML += "== START ==" + "<br />"; 
+        }
+        document.getElementById("data").innerHTML += event.data + "<br />";
+        if(event.data == "START"){
+            document.getElementById("data").innerHTML += "== KONIEC ==" + "<br />"; 
+            c.terminate();
+            c = undefined;
+        }
       }
-      c.terminate();
-      c = undefined;
+
     </script>
   </head>
   <body>
