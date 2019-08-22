@@ -5,9 +5,14 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
     <script>
-      $("a-scene").load(function(){
-        console.log("scene loaded");
-      });
+        AFRAME.registerComponent('log', {
+          schema: {type: 'string'},
+
+          init: function () {
+            var stringToLog = this.data;
+            console.log(stringToLog);
+          }
+        });
     </script>
   </head>
   <body>
