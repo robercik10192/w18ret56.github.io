@@ -6,17 +6,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
     <script>
         AFRAME.registerComponent('log', {
-          schema: {type: 'string'},
+          schema: {},
 
           init: function () {
-            var stringToLog = this.data;
-            console.log(stringToLog);
+            console.log("scene loaded");
           }
         });
     </script>
   </head>
   <body>
-    <a-scene log="scene loaded">
+    <a-scene log>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
