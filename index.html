@@ -2,7 +2,13 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
+    <script>
+      $("a-scene").load(function(){
+        alert("scene loaded");
+      });
+    </script>
   </head>
   <body>
     <a-scene>
