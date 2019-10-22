@@ -10,6 +10,7 @@
   <body>
     <script>
         var to = null;
+        var pointer = null;
         var config = {
             type: Phaser.CANVAS,
             width: window.innerWidth * window.devicePixelRatio,
@@ -40,11 +41,12 @@
        }      
       
       function render(){
-        
+        pointer = to.input.pointer1;
+        game.debug.pointer(to.input.pointer1);
       }
       
       function update(){
-        game.debug.pointer(to.input.pointer1);
+        
       }
       
     </script>
