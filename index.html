@@ -11,6 +11,8 @@
     <script>
         var to = null;
         var pointer = null;
+        var width = window.innerWidth * window.devicePixelRatio;
+        var height = window.innerHeight * window.devicePixelRatio;
         var config = {
             type: Phaser.CANVAS,
             width: window.innerWidth * window.devicePixelRatio,
@@ -45,7 +47,10 @@
       }
       
       function update(){
-        alert("UPDATE!");
+        var new_width = window.innerWidth * window.devicePixelRatio;
+        var new_height = window.innerHeight * window.devicePixelRatio;
+        if(width != new_width) game.canvas.width = new_width;
+        if(width != new_height) game.canvas.height = new_height;
       }
       
     </script>
