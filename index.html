@@ -47,10 +47,12 @@
       }
       
       function update(){
-        var new_width = window.innerWidth * window.devicePixelRatio;
-        var new_height = window.innerHeight * window.devicePixelRatio;
-        if(width != new_width) game.canvas.width = new_width;
-        if(width != new_height) game.canvas.height = new_height;
+          var pointer = scene.input.activePointer;
+          if (pointer.isDown) {
+              var touchX = pointer.x;
+              var touchY = pointer.y;
+              console.log(touchX + ":" + touchY);
+          }
       }
       
     </script>
